@@ -76,25 +76,21 @@ stage_1 = [
 # Stage 2 — Moderate updates (10–14)
 stage_2 = [
     
-    "Moderate updates detected. System stability remains acceptable—for now.",
-
-    "A backlog of updates has formed. Not yet critical, but trending toward your usual negligence.",
-
-    "Update queue identified. Severity: tolerable. User competence: questionable.",
-
-    "System requires maintenance. Nothing urgent, though clearly not handled by a professional.",
-
-    "Moderate updates pending. Consider it preventative care, something you’re historically bad at.",
-
-    "Update accumulation detected. Classification: minor inconvenience. Solution: basic responsibility.",
-
-    "Your system is requesting attention. You may ignore it, but entropy has a sense of humor.",
-
-    "Moderate updates present. I’d say ‘no cause for concern,’ but you’d take that as permission to procrastinate.",
-
-    "System performance remains stable. Updates recommended before your luck inevitably runs out.",
-
-    "Moderate backlog registered. You may continue ignoring it, but I will continue documenting your incompetence."
+  "Updates available. Pause the memes and handle it.",
+    "Backlog growing. Less scrolling, more installing.",
+    "Maintenance nudge: your system needs attention, not excuses.",
+    "Updates queued. Procrastination isn’t a patch.",
+    "Security reminder: you’re safer after a quick update.",
+    "Stability dipping. A small update beats a big headache.",
+    "Packages piling up. Take five and clear the stack.",
+    "Your system’s hinting—give it a little care.",
+    "Update time. Do future-you a favor.",
+    "Backlog creeping. Don’t let it turn into a crisis.",
+    "Performance could be better. You know what to do.",
+    "Updates waiting. One click, less risk.",
+    "It’s not urgent—yet. Get ahead of it.",
+    "Minor issues today prevent major ones tomorrow.",
+    "Friendly poke: update now, relax later."
 ]
 
 
