@@ -39,13 +39,11 @@ result_storage_file = os.path.join(script_dir, ".aurora_result_storage_file")
 
 # ---------------- FUNCTIONS ----------------
 
-
-
-
 def update():
     """Run system update via pacman."""
     subprocess.run(["sudo", "pacman", "-Syu", "--noconfirm"])
-
+    # after update we check again
+    check_updates()
 
 def package_count():
     """Print package count with color according to severity."""
@@ -145,6 +143,3 @@ else:
             
 package_count()
 update_handler()
-
-
-
