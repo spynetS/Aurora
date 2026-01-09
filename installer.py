@@ -1,5 +1,5 @@
 import subprocess
-from strings import service, timer, greeting
+from strings import service, timer, greeting,pacman_hook
 from functions import say, write, terminal, bash
 from pathlib import Path
 from time import sleep
@@ -13,6 +13,7 @@ MAX_TRIES = 3
 servicePath = Path("/etc/systemd/system/aurora.service")
 timerPath = Path("/etc/systemd/system/aurora.timer")
 logPath = Path("/tmp/aurora.log")
+pacman_hook_path = Path("/etc/pacman.d/hooks")
 
 if not fast_install:
     say(greeting)
@@ -186,6 +187,28 @@ else:
                 check=True,
             )
             terminal("timer file sucefsfully installed")
+            break
+        except Exception as e:
+            terminal(f"Installation failed: {e}")
+            if attempt == MAX_TRIES:
+                raise
+    # Instaling pacman hook
+    for attempt in range(1, MAX_TRIES + 1):
+        terminal("Installing pacman hook")
+        try:
+            # Creating pacman hook folder if it doesn't exist
+            if not pacman_hook_path.exists():
+                terminal("/etc/pacman.d/hooks path not found")
+                terminal("creating path /etc/pacman.d/hooks")
+                subprocess.run(["sudo", "mkdir", "/etc/pacman.d/hooks"])
+            subprocess.run(
+                ["sudo", "tee", "/etc/pacman.d/hooks/aurora-pacman-update.hook"],
+                input=pacman_hook,
+                text=True,
+                stdout=subprocess.DEVNULL,
+                check=True,
+            )
+            terminal("pacman update hook sucefsfully installed")
             break
         except Exception as e:
             terminal(f"Installation failed: {e}")

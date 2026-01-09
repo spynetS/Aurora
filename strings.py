@@ -23,6 +23,17 @@ WantedBy=timers.target
 
  """
 
+pacman_hook = f"""[Trigger]
+Operation = Upgrade
+Type = Package
+Target = pacman
+
+[Action]
+Description = Running Aurora after pacman upgrade
+When = PostTransaction
+Exec = /usr/bin/python /home/{user}/Aurora/daemon.py
+"""
+
 
 greeting = f"""Hello {user}! I’m Aurora your personal system assistant. Let’s get things running."""
 
